@@ -1,0 +1,386 @@
+/* 1. RESET BÁSICO: Limpiamos los márgenes por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ESTILOS GENERALES: Fondo oscuro nocturno y texto claro */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Gris muy oscuro, casi negro */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* 3. ENCABEZADO (HEADER): Usamos Flexbox para alinear los elementos a los lados */
+header {
+    display: flex; /* Esto activa Flexbox */
+    justify-content: space-between; /* Separa el logo de la navegación */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 20px 40px;
+    background-color: #000000;
+}
+
+/* Estilo para el logo */
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00; /* Color amarillo/dorado brillante */
+}
+
+/* Navegación: Quitamos los puntos de la lista y usamos Flexbox */
+nav ul {
+    list-style: none; /* Obligatorio: lista semántica sin viñetas visuales */
+    display: flex;
+    gap: 30px; /* Espacio entre las opciones del menú */
+}
+
+/* Estilo de los enlaces */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none; /* Quitamos la línea de abajo del texto */
+    font-size: 16px;
+}
+
+/* Efecto hover: Cambia de color al pasar el mouse por encima */
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* 4. BOTONES: Estilo principal para llamados a la acción */
+.btn-principal {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    cursor: pointer;
+}
+
+.btn-principal:hover {
+    background-color: #e6b800; /* Un tono un poco más oscuro al hacer hover */
+}
+
+/* 5. SECCIÓN HERO: La primera gran pantalla */
+.hero {
+    height: 90vh; /* Ocupa casi toda la altura de la pantalla */
+    display: flex; /* Usamos Flexbox para centrar todo el texto */
+    flex-direction: column; /* Apila el texto de arriba hacia abajo */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    /* Aquí pondremos una imagen de fondo más adelante, por ahora un gris oscuro */
+    background-color: #2b2b2b; 
+}
+
+.hero h1 {
+    font-size: 4rem; /* Texto muy grande */
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* 6. SECCIÓN FECHAS Y TABLA */
+.fechas {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.fechas h2 {
+    color: #ffcc00;
+    margin-bottom: 30px;
+    font-size: 2rem; /* Tamaño grande para el título de la sección */
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    max-width: 800px;
+    margin: 0 auto; /* Esto centra la tabla horizontalmente en la pantalla */
+    overflow-x: auto; /* Permite deslizar la tabla hacia los lados en móviles si es muy ancha */
+}
+
+/* Estilos directos a la tabla */
+table {
+    width: 100%; /* Hace que la tabla ocupe todo el espacio disponible de su contenedor */
+    border-collapse: collapse; /* Une los bordes para que no se vean dobles o separados */
+    background-color: #2b2b2b;
+}
+
+/* Estilos para las celdas (títulos y datos) */
+th, td {
+    padding: 15px;
+    border: 1px solid #444444; /* Borde gris oscuro para cada celda */
+    text-align: center;
+}
+
+/* Estilos específicos solo para los títulos (cabecera) */
+th {
+    background-color: #ffcc00;
+    color: #000000; /* Letra negra para que contraste bien con el fondo amarillo */
+    font-weight: bold;
+}
+
+/* Efecto cebra: le da un color diferente a las filas pares del cuerpo para facilitar la lectura */
+tbody tr:nth-child(even) {
+    background-color: #333333;
+}
+
+/* 7. SECCIÓN SOBRE EL FESTIVAL */
+.sobre {
+    display: flex; /* Activa Flexbox para poner elementos lado a lado */
+    flex-wrap: wrap; /* Súper importante: si la pantalla es pequeña, baja la imagen a la siguiente línea */
+    align-items: center; /* Centra las cajas verticalmente */
+    gap: 40px; /* Crea un espacio entre el texto y la imagen */
+    padding: 60px 40px;
+    background-color: #2b2b2b; /* Un gris diferente para separar visualmente las secciones */
+}
+
+/* Configuramos las dos cajas (texto e imagen) para que crezcan y ocupen el espacio */
+.sobre-contenido, 
+.sobre-imagen {
+    flex: 1; /* Ambas cajas toman el mismo ancho disponible */
+    min-width: 300px; /* Evita que las cajas se aplasten demasiado en pantallas pequeñas */
+}
+
+/* Estilos de los textos */
+.sobre-contenido h2 {
+    color: #ffcc00;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-contenido h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.sobre-contenido p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estilos de la lista obligatoria */
+.lista-experiencias {
+    list-style: none; /* Quitamos el punto negro feo por defecto de HTML */
+}
+
+.lista-experiencias li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    display: flex; /* Usamos flexbox de nuevo aquí para alinear el emoji con el texto */
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo para que la imagen no se desborde */
+.sobre-imagen img {
+    width: 100%; /* La imagen se adapta al tamaño de su caja */
+    border-radius: 8px; /* Redondeamos las puntas para que se vea más moderno */
+}
+
+/* 8. SECCIÓN ZONAS TEMÁTICAS (CSS GRID) */
+.zonas {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.zonas h2 {
+    color: #ffcc00;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.zonas-desc {
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+/* El Contenedor Grid */
+.grid-zonas {
+    display: grid; /* Activamos CSS Grid */
+    /* La siguiente línea es un truco genial: 
+       Crea columnas automáticamente. Cada tarjeta medirá mínimo 250px. 
+       Si hay espacio de sobra, se estiran equitativamente (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Espacio entre cada tarjeta */
+    max-width: 1000px;
+    margin: 0 auto; /* Centra la cuadrícula en la pantalla */
+}
+
+/* Estilo individual de cada Tarjeta (Card) */
+.card-zona {
+    background-color: #2b2b2b;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.3s; /* Prepara la tarjeta para una animación suave */
+}
+
+/* Efecto hover: La tarjeta "salta" un poquito hacia arriba cuando le pasas el mouse */
+.card-zona:hover {
+    transform: translateY(-10px); 
+    border-color: #ffcc00;
+}
+
+/* Estilos de los elementos dentro de la tarjeta */
+.card-zona .icono {
+    font-size: 3rem; /* Hace el emoji muy grande */
+    margin-bottom: 15px;
+}
+
+.card-zona h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.card-zona p {
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+/* 9. SECCIÓN GALERÍA */
+.galeria {
+    padding: 60px 20px;
+    background-color: #2b2b2b; /* Fondo gris para contrastar con las zonas */
+    text-align: center;
+}
+
+.galeria h2 {
+    color: #ffcc00;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* El mismo truco de Grid que usamos en las tarjetas */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea columnas automáticamente */
+    gap: 15px; /* Espacio entre fotos */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-galeria img {
+    width: 100%; /* La imagen ocupa todo el ancho de su columna */
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #444;
+}
+
+/* 10. PIE DE PÁGINA (FOOTER) */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 20px;
+    display: flex; /* Flexbox para poner la info y las redes una al lado de la otra */
+    justify-content: space-around; /* Separa los dos bloques */
+    flex-wrap: wrap; /* Súper importante para que se apilen en celulares */
+    gap: 20px;
+    text-align: center;
+}
+
+footer h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+
+.footer-redes p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px; /* Separación entre cada red social */
+}
+
+footer a:hover {
+    color: #ffcc00; /* Efecto al pasar el mouse */
+}
+
+
+
+
+/* Todo lo que esté dentro de estas llaves solo se aplicará 
+   si la pantalla tiene un ancho máximo de 768 píxeles (celulares) */
+
+/* =========================================
+   11. DISEÑO RESPONSIVO (MÓVILES)
+========================================= */
+@media (max-width: 768px) {
+    
+    header {
+        flex-wrap: wrap; 
+    }
+
+    /* 1. Dibujamos el contenedor del botón hamburguesa */
+    .burguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* 2. Dibujamos las 3 rayitas del botón */
+    .burguer span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffcc00; /* Tu color amarillo */
+        border-radius: 3px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+    
+    .boton-header {
+        display: none; 
+    }
+
+    /* 3. Menú oculto por defecto */
+    .menu-navegacion {
+        display: none; 
+        width: 100%; 
+        margin-top: 15px;
+    }
+
+    /* ESTA ES LA CLASE CLAVE: JavaScript se la pondrá al menú para mostrarlo */
+    .menu-navegacion.activo {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .hero h1 { font-size: 2.5rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .fechas, .sobre, .zonas, .galeria { padding: 40px 15px; }
+    footer { flex-direction: column; }
+}
+
+/* Ocultamos el botón hamburguesa si la pantalla es grande (computadora) */
+@media (min-width: 769px) {
+    .burguer {
+        display: none;
+    }
+}
